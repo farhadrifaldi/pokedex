@@ -19,7 +19,7 @@ export enum PokemonTypes {
   Fairy = "fairy",
 }
 
-export type Pokemon = {
+export interface Pokemon {
   id: number;
   name: string;
   sprites: {
@@ -66,25 +66,25 @@ export type Pokemon = {
     name: string;
     url: string;
   };
-};
+}
 
-export type PokemonCardComponentData = {
+export interface PokemonCardComponentData {
   id: string;
   name: string;
   image: string;
   types: string[];
-};
+}
 
-export type PokemonListResult = {
+export interface PokemonListResult {
   next: string | null;
   count: number;
   results: {
     name: string;
     url: string;
   }[];
-};
+}
 
-export type PokemonSpecies = {
+export interface PokemonSpecies {
   name: string;
   evolution_chain: {
     url: string;
@@ -95,15 +95,15 @@ export type PokemonSpecies = {
       name: string;
     };
   }[];
-};
+}
 
-export type PokemonEvolutionChain = {
+export interface PokemonEvolutionChain {
   chain: PokemonEvolutionChaiTo;
-};
+}
 
-export type PokemonEvolutionChaiTo = {
+export interface PokemonEvolutionChaiTo {
   evolves_to: PokemonEvolutionChaiTo[];
   species: {
     name: string;
   };
-};
+}

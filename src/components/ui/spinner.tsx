@@ -21,30 +21,32 @@ interface SpinnerProps
   variant?: "gray" | "white";
 }
 
-const Spinner = React.forwardRef<HTMLImageElement, SpinnerProps>(
-  ({ className, size, variant = "gray", ...props }, ref) => {
-    return (
-      <div className="flex items-center font-semibold">
-        <img
-          ref={ref}
-          src={
-            variant === "white" ? "/pokeball-bg-white.png" : "/pokeball-bg.png"
-          }
-          alt="Loading..."
-          className={spinnerVariants({ size, className })}
-          {...props}
-        />
-        <span
-          className={`ml-2 ${
-            variant === "white" ? "text-white/50" : "text-[#bcbcbc]"
-          }`}
-        >
-          Loading ...
-        </span>
-      </div>
-    );
-  }
-);
+const Spinner = ({
+  className,
+  size,
+  variant = "gray",
+  ...props
+}: SpinnerProps) => {
+  return (
+    <div className="flex items-center font-semibold">
+      <img
+        src={
+          variant === "white" ? "/pokeball-bg-white.png" : "/pokeball-bg.png"
+        }
+        alt="Loading..."
+        className={spinnerVariants({ size, className })}
+        {...props}
+      />
+      <span
+        className={`ml-2 ${
+          variant === "white" ? "text-white/50" : "text-[#bcbcbc]"
+        }`}
+      >
+        Loading ...
+      </span>
+    </div>
+  );
+};
 Spinner.displayName = "Spinner";
 
 export { Spinner };

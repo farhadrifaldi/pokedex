@@ -1,9 +1,9 @@
 import { Pokemon, PokemonSpecies } from "@/types/pokemon";
 
-type props = {
+interface props {
   pokemon: Pokemon;
   species?: PokemonSpecies | null;
-};
+}
 
 export function PokemonDetailAbout({ pokemon, species }: props) {
   const weightKg = pokemon.weight / 10;
@@ -26,7 +26,7 @@ export function PokemonDetailAbout({ pokemon, species }: props) {
       </p>
       <p className="font-medium text-gray-500">Abilities</p>
       <p className="col-span-2">
-        {pokemon?.abilities.map((ability) => ability.ability.name).join(", ")}
+        {pokemon.abilities.map((ability) => ability.ability.name).join(", ")}
       </p>
     </div>
   );

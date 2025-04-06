@@ -25,7 +25,9 @@ function Progress({
         className={`${
           type === "danger" ? "bg-pokered" : "bg-pokegreen"
         } h-full w-full flex-1 transition-all`}
-        style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
+        style={{
+          transform: `translateX(-${(100 - (value ?? 0)).toString()}%)`,
+        }}
       />
     </ProgressPrimitive.Root>
   );

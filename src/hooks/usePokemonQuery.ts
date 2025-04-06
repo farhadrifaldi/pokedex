@@ -30,7 +30,7 @@ export function usePokemonListQuery(params: { limit: number }) {
     queryFn: async (context) => {
       const response = await getPokemons({
         limit: params.limit,
-        offset: (context.pageParam as number) ?? 0,
+        offset: context.pageParam as number,
       });
       return response;
     },

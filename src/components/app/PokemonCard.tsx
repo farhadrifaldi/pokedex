@@ -5,10 +5,10 @@ import { Spinner } from "../ui/spinner";
 import { Pokemon } from "@/types/pokemon";
 import { bgColor } from "@/lib/utils";
 
-type props = {
+interface props {
   pokemonUrl?: string;
   onClick?: (pokemon?: Pokemon | null) => void;
-};
+}
 export function PokemonCard({ pokemonUrl, onClick }: props) {
   const { data, isLoading } = usePokemonQuery(pokemonUrl);
 
@@ -35,8 +35,8 @@ export function PokemonCard({ pokemonUrl, onClick }: props) {
               <p className="font-semibold text-lg md:text-xl text-white mb-2 tracking-wider capitalize">
                 {data?.name}
               </p>
-              {data?.types.map((v, i) => (
-                <Badge key={i} className="capitalize">
+              {data?.types.map((v) => (
+                <Badge key={v.slot} className="capitalize">
                   {v.type.name}
                 </Badge>
               ))}

@@ -9,9 +9,9 @@ import {
   usePokemonSpeciesQuery,
 } from "@/hooks/usePokemonQuery";
 
-type props = {
+interface props {
   pokemon: Pokemon;
-};
+}
 
 enum TabKeys {
   about = "About",

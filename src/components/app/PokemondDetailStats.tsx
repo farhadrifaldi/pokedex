@@ -10,9 +10,9 @@ enum StatKeys {
   speed = "speed",
 }
 
-type props = {
+interface props {
   pokemon: Pokemon;
-};
+}
 export function PokemonDetailStats({ pokemon }: props) {
   const stats = {
     [StatKeys.hp]: {

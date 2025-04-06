@@ -9,39 +9,39 @@ export function cn(...inputs: ClassValue[]) {
 export const bgColor = (type?: PokemonTypes) => {
   if (type) {
     switch (type) {
-      case "fire":
+      case PokemonTypes.Fire:
         return "bg-pokered";
-      case "water":
+      case PokemonTypes.Water:
         return "bg-pokeblue";
-      case "grass":
+      case PokemonTypes.Grass:
         return "bg-pokegreen";
-      case "electric":
+      case PokemonTypes.Electric:
         return "bg-pokeyellow";
-      case "ice":
+      case PokemonTypes.Ice:
         return "bg-pokeblue-light";
-      case "fighting":
+      case PokemonTypes.Fighting:
         return "bg-pokegray";
-      case "poison":
+      case PokemonTypes.Poison:
         return "bg-pokepurple";
-      case "ground":
+      case PokemonTypes.Ground:
         return "bg-pokebrown";
-      case "flying":
+      case PokemonTypes.Flying:
         return "bg-pokegray-ligth";
-      case "psychic":
+      case PokemonTypes.Psychic:
         return "bg-pokepurple-dark";
-      case "bug":
+      case PokemonTypes.Bug:
         return "bg-pokegreen-dark";
-      case "rock":
+      case PokemonTypes.Rock:
         return "bg-pokebrown";
-      case "ghost":
+      case PokemonTypes.Ghost:
         return "bg-pokepurple-dark";
-      case "steel":
+      case PokemonTypes.Steel:
         return "bg-pokegray";
-      case "dragon":
+      case PokemonTypes.Dragon:
         return "bg-pokeyellow-dark";
-      case "dark":
+      case PokemonTypes.Dark:
         return "bg-pokepurple-dark";
-      case "fairy":
+      case PokemonTypes.Fairy:
         return "bg-pokepink";
       default:
         return "bg-pokegray";

@@ -9,8 +9,8 @@ interface CardsProps {
 export function Cards({ data, onClick }: CardsProps) {
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-      {data.map((card, index) => (
-        <PokemonCard key={index} pokemonUrl={card.url} onClick={onClick} />
+      {data.map((card) => (
+        <PokemonCard key={card.name} pokemonUrl={card.url} onClick={onClick} />
       ))}
     </div>
   );

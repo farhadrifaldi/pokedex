@@ -21,7 +21,7 @@ function App() {
       Math.ceil(window.innerHeight + window.scrollY) >=
       document.documentElement.scrollHeight;
     if (bottom) {
-      fetchNextPage();
+      void fetchNextPage();
     }
   }, [fetchNextPage]);
 
@@ -40,7 +40,12 @@ function App() {
         </h1>
 
         {pokemonList && (
-          <Cards data={pokemonList} onClick={(pokemon) => setDetail(pokemon)} />
+          <Cards
+            data={pokemonList}
+            onClick={(pokemon) => {
+              setDetail(pokemon);
+            }}
+          />
         )}
         {isLoading && (
           <div className="flex justify-center py-20">
@@ -50,7 +55,9 @@ function App() {
         <PokemonDetail
           pokemon={detail}
           open={Boolean(detail)}
-          onClose={() => setDetail(null)}
+          onClose={() => {
+            setDetail(null);
+          }}
         />
       </div>
     </div>

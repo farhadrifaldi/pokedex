@@ -10,26 +10,22 @@ import { Badge } from "../ui/badge";
 import { bgColor } from "@/lib/utils";
 import { PokemonDetailTabs } from "./PokemonDetailTabs";
 
-type props = {
+interface props {
   pokemon?: Pokemon | null;
   open: boolean;
   onClose: () => void;
-};
+}
 
 export function PokemonDetail({ pokemon, open, onClose }: props) {
   const pokeIndex = () => {
     const idString = pokemon?.id.toString() ?? "1";
-    const zeroFillter = 3 - idString?.length;
+    const zeroFillter = 3 - idString.length;
     return "#" + "0".repeat(zeroFillter) + idString;
   };
 
   return (
     <Drawer open={open} onClose={onClose}>
-      <DrawerContent
-        className={
-          " " + bgColor(pokemon?.types[0]?.type.name)
-        }
-      >
+      <DrawerContent className={" " + bgColor(pokemon?.types[0]?.type.name)}>
         <DrawerHeader
           className="h-[50vh] relative"
           style={{
@@ -45,8 +41,8 @@ export function PokemonDetail({ pokemon, open, onClose }: props) {
                 <p className="font-bold text-white text-3xl capitalize mb-2">
                   {pokemon?.name}
                 </p>
-                {pokemon?.types.map((v, i) => (
-                  <Badge key={i} className="capitalize mr-2">
+                {pokemon?.types.map((v) => (
+                  <Badge key={v.slot} className="capitalize mr-2">
                     {v.type.name}
                   </Badge>
                 ))}
