@@ -29,7 +29,7 @@ export function PokemonDetail({ pokemon, open, onClose }: props) {
         <DrawerHeader
           className="h-[50vh] relative"
           style={{
-            backgroundImage: "url('/public/pokeball-bg-white.png')",
+            backgroundImage: "url('/pokeball-bg-white.png')",
             backgroundSize: "250px",
             backgroundPosition: "130% 170%",
             backgroundRepeat: "no-repeat",

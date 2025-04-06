@@ -20,7 +20,7 @@ export function PokemonCard({ pokemonUrl, onClick }: props) {
       className={"cursor-pointer " + bgColor(data?.types[0].type.name)}
       aria-label="button is-primary"
       style={{
-        backgroundImage: "url('/public/pokeball-bg-white.png')",
+        backgroundImage: "url('/pokeball-bg-white.png')",
         backgroundSize: "150px",
         backgroundPosition: "90px 40px",
         backgroundRepeat: "no-repeat",
